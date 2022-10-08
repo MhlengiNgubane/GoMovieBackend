@@ -41,10 +41,6 @@ func main() {
 		if err != nil {
 			log.Println(err)
 		}
-
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusOk)
-		w.Write(js)
 	})
 
 	err := http.ListenAndServe(fmt.Sprintf(":%d", cfg.port), nil)

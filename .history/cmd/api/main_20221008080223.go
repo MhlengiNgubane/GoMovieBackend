@@ -43,7 +43,7 @@ func main() {
 		}
 
 		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusOk)
+		w.WriteHeader(http.Stut)
 		w.Write(js)
 	})
 
