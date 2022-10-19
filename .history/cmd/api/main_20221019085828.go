@@ -44,7 +44,7 @@ func main() {
 
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
 
-	db, err := openDB(cfg)
+	db, err := opoenDB(cfg)
 	if err != nil {
 		logger.Fatal(err)
 	}
@@ -65,7 +65,7 @@ func main() {
 
 	logger.Println("Starting server on port", cfg.port)
 
-	err = srv.ListenAndServe()
+	err := srv.ListenAndServe()
 	if err != nil {
 		log.Println(err)
 	}

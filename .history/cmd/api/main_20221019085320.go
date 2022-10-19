@@ -44,12 +44,6 @@ func main() {
 
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
 
-	db, err := openDB(cfg)
-	if err != nil {
-		logger.Fatal(err)
-	}
-	defer db.Close()
-
 	app := &application{
 		config: cfg,
 		logger: logger,
@@ -65,12 +59,11 @@ func main() {
 
 	logger.Println("Starting server on port", cfg.port)
 
-	err = srv.ListenAndServe()
+	err := srv.ListenAndServe()
 	if err != nil {
 		log.Println(err)
 	}
-}
-
+	
 func openDB(cfg config) (*sql.DB, error) {
 	db, err := sql.Open("postgres", cfg.db.dsn)
 	if err != nil {
@@ -87,4 +80,3 @@ func openDB(cfg config) (*sql.DB, error) {
 
 	return db, err
 }
-
