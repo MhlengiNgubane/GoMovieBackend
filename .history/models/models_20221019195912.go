@@ -5,19 +5,17 @@ import (
 	"time"
 )
 
-// Models is the wrapper for database
+// Models is the wrapper 
 type Models struct {
 	DB DBModel
 }
 
-// NewModels returns models with db pool
 func NewModels(db *sql.DB) Models {
 	return Models {
 		DB: DBModel{DB: db},
 	}
 }
 
-// Movies is the type for movies
 type Movie struct {
 	ID          int          `json:"id"`
 	Title       string       `json:"title"`
@@ -32,7 +30,6 @@ type Movie struct {
 	MovieGenre  []MovieGenre `json:"-"`
 }
 
-// Genre is the type for genre
 type Genre struct {
 	ID        int       `json:"id"`
 	GenreName string    `json:"genre_name"`
@@ -40,7 +37,6 @@ type Genre struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// MovieGenre is the type for movieGenre
 type MovieGenre struct {
 	ID        int       `json:"id"`
 	MovieID   int       `json:"movie_id"`

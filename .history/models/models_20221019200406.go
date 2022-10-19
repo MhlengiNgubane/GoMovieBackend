@@ -32,7 +32,7 @@ type Movie struct {
 	MovieGenre  []MovieGenre `json:"-"`
 }
 
-// Genre is the type for genre
+//
 type Genre struct {
 	ID        int       `json:"id"`
 	GenreName string    `json:"genre_name"`
@@ -40,7 +40,6 @@ type Genre struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// MovieGenre is the type for movieGenre
 type MovieGenre struct {
 	ID        int       `json:"id"`
 	MovieID   int       `json:"movie_id"`

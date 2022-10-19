@@ -40,7 +40,7 @@ type Genre struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// MovieGenre is the type for movieGenre
+// MovieGenre is the ty
 type MovieGenre struct {
 	ID        int       `json:"id"`
 	MovieID   int       `json:"movie_id"`

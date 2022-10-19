@@ -1,7 +1,6 @@
 package main
 
 import (
-	"ReactAndGoMovieBackend/models"
 	"context"
 	"database/sql"
 	"flag"
@@ -55,7 +54,6 @@ func main() {
 	app := &application{
 		config: cfg,
 		logger: logger,
-		models: models.NewModels(db),
 	}
 
 	srv := &http.Server{
