@@ -7,7 +7,7 @@ import (
 )
 
 
-func (app *application) routes() http.Handler {
+func (app *application) routes()  {
 	router := httprouter.New()
 
 	router.HandlerFunc(http.MethodGet, "/status", app.statusHandler)
@@ -15,5 +15,5 @@ func (app *application) routes() http.Handler {
 	router.HandlerFunc(http.MethodGet, "/v1/movie/:id", app.getOneMovie)
 	router.HandlerFunc(http.MethodGet, "/v1/movies", app.getAllMovies)
 
-	return app.enableCORS(router)
+	return router
 }
