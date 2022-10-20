@@ -38,20 +38,12 @@ func (m *DBModel) Get(id int) (*Movie, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	//get the genres
-query = `select 
-		mg.id, mg.movie_id, mg.genre_id, g.genre_name
-		from
-			movies_genre mg
-			left join genres g on (g.id = mg.genre_id)
-		where	
-			mg.movie_id = $1
-`
-rows, _ := m.DB.QueryContext(ctx, query, id)
-
 	return &movie, nil
 }
+
+//get the genres
+query = ``
+rows, _ := m.DB.QueryCo
 
 // All returns all movies and error, if any
 func (m *DBModel) All(id int) ([]*Movie, error) {

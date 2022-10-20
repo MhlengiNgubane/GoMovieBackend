@@ -46,7 +46,7 @@ query = `select
 			movies_genre mg
 			left join genres g on (g.id = mg.genre_id)
 		where	
-			mg.movie_id = $1
+			mg.
 `
 rows, _ := m.DB.QueryContext(ctx, query, id)
 

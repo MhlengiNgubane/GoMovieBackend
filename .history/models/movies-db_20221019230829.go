@@ -41,12 +41,6 @@ func (m *DBModel) Get(id int) (*Movie, error) {
 
 	//get the genres
 query = `select 
-		mg.id, mg.movie_id, mg.genre_id, g.genre_name
-		from
-			movies_genre mg
-			left join genres g on (g.id = mg.genre_id)
-		where	
-			mg.movie_id = $1
 `
 rows, _ := m.DB.QueryContext(ctx, query, id)
 

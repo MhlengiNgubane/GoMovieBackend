@@ -1,9 +1,11 @@
 package main
 
 import (
+	"ReactAndGoMovieBackend/models"
 	"errors"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -20,7 +22,7 @@ func (app *application) getOneMovie(w http.ResponseWriter, r *http.Request) {
 
 	app.logger.Println("id is", id)
 
-	movie, err := app.models.DB.Get(id)
+	movie, err := app.models
 
 	// movie := models.Movie {
 	// 	ID: id,
