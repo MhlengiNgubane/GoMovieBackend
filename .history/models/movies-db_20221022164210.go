@@ -143,7 +143,7 @@ func (m *DBModel) All() ([]*Movie, error) {
 }
 
 // Genres return all genres
-func (m *DBModel) GenresAll() ([]*Genre, error) {
+func (m, *DBModel) GenresAll() ([]*Genre, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
 	defer cancel()
 
@@ -152,18 +152,5 @@ func (m *DBModel) GenresAll() ([]*Genre, error) {
 	rows, err := m.DB.QueryContext(ctx, query)
 	if err != nil {
 		return nil, err
-	}
-	defer rows.Close()
-
-	var genres []*Genre
-
-	for rows.Next() {
-		var g Genre
-		err := rows.Scan(
-			&g.ID,
-			&g.GenreName,
-			&g.CreatedAt,
-			&g.UpdatedAt,
-		)
 	}
 }

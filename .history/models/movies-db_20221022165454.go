@@ -161,9 +161,9 @@ func (m *DBModel) GenresAll() ([]*Genre, error) {
 		var g Genre
 		err := rows.Scan(
 			&g.ID,
-			&g.GenreName,
-			&g.CreatedAt,
-			&g.UpdatedAt,
+			&g.ID,
+			&g.ID,
+			&g.ID,
 		)
 	}
 }

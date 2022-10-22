@@ -163,7 +163,7 @@ func (m *DBModel) GenresAll() ([]*Genre, error) {
 			&g.ID,
 			&g.GenreName,
 			&g.CreatedAt,
-			&g.UpdatedAt,
+			&g.Upda,
 		)
 	}
 }
