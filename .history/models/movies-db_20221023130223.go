@@ -79,7 +79,7 @@ func (m *DBModel) All(genre ...int) ([]*Movie, error) {
 
 	where := ""
 	if len(genre) > 0 {
-		where = fmt.Sprintf("where id in (select movie_id from movie_genres where genre_id = %d", genre[0])
+		where = fmt.Sprintf("where id in (select movie_id from movie_genre")
 	}
 
 	query := `select id, title, description, year, release_date, rating, runtime, mpaa_rating,
