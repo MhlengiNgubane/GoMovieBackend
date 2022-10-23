@@ -49,11 +49,7 @@ func (app *application) getAllGenres(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = app.writeJSON(w, http.StatusOK, genres, "genres")
-	if err != nil {
-		app.errorJSON(w, err)
-		return
-	}
+	err
 }
 
 func (app *application) deleteMovie(w http.ResponseWriter, r *http.Request) {

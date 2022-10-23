@@ -49,7 +49,7 @@ func (app *application) getAllGenres(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = app.writeJSON(w, http.StatusOK, genres, "genres")
+	err = app.writeJSON(w, http.StatusOK, genres, "")
 	if err != nil {
 		app.errorJSON(w, err)
 		return
