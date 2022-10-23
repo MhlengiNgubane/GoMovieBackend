@@ -19,10 +19,6 @@ func (app *application) getOneMovie(w http.ResponseWriter, r *http.Request) {
 	}
 
 	movie, err := app.models.DB.Get(id)
-	if err != nil {
-		app.errorJSON(w, err)
-		return
-	}
 
 	err = app.writeJSON(w, http.StatusOK, movie, "movie")
 	if err != nil {
@@ -69,17 +65,7 @@ func (app *application) getAllMovieByGenre(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	movies, err := app.models.DB.All(genreID)
-	if err != nil {
-		app.errorJSON(w, err)
-		return
-	}
-
-	err = app.writeJSON(w, http.StatusOK, movies, "movies")
-	if err != nil {
-		app.errorJSON(w, err)
-		return
-	}
+	movies, err 
 }
 
 func (app *application) deleteMovie(w http.ResponseWriter, r *http.Request) {
