@@ -6,8 +6,10 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+
 func (app *application) routes() http.Handler {
 	router := httprouter.New()
+
 	router.HandlerFunc(http.MethodGet, "/status", app.statusHandler)
 
 	router.HandlerFunc(http.MethodGet, "/v1/movie/:id", app.getOneMovie)
@@ -16,8 +18,7 @@ func (app *application) routes() http.Handler {
 
 	router.HandlerFunc(http.MethodGet, "/v1/genres", app.getAllGenres)
 
-	router.HandlerFunc(http.MethodPost, "/v1/admin/editmovie", app.editMovie)
-	router.HandlerFunc(http.MethodGet, "/v1/admin/deletemovie/:id", app.deleteMovie)
+	router.HandlerFunc(http.MethodPost, "/v1/admin/editmovie", app.editmovie)
 
 	return app.enableCORS(router)
 }
