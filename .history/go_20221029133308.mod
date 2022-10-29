@@ -10,5 +10,3 @@ require (
 	github.com/pascaldekloe/jwt v1.12.0
 	golang.org/x/crypto v0.1.0
 )
-
-require github.com/justinas/alice v1.2.0
