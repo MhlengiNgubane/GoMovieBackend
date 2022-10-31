@@ -213,7 +213,7 @@ func getPoster(movie models.Movie) models.Movie {
 	}
 
 	client := &http.Client{}
-	key := "5b1d00719936b73aadd5412a64e9de96"
+	key := "b41447e6319d1cd467306735632ba733"
 	theUrl := "https://api.themoviedb.org/3/search/movie?api_key="
 	log.Println(theUrl + key + "&query=" + url.QueryEscape(movie.Title))
 

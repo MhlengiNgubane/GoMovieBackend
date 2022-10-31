@@ -109,7 +109,6 @@ func (m *DBModel) All(genre ...int) ([]*Movie, error) {
 			&movie.MPAARating,
 			&movie.CreatedAt,
 			&movie.UpdatedAt,
-			&movie.Poster,
 		)
 		if err != nil {
 			return nil, err

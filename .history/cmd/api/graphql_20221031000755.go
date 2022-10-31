@@ -13,12 +13,13 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+
 var movies []*models.Movie
 
 // graphql schema definition
 var fields = graphql.Fields{
 	"movie": &graphql.Field{
-		Type:        movieType,
+		Type: movieType,
 		Description: "Get movie by id",
 		Args: graphql.FieldConfigArgument{
 			"id": &graphql.ArgumentConfig{
@@ -38,14 +39,14 @@ var fields = graphql.Fields{
 		},
 	},
 	"list": &graphql.Field{
-		Type:        graphql.NewList(movieType),
+		Type: graphql.NewList(movieType),
 		Description: "Get all movies",
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 			return movies, nil
 		},
 	},
 	"search": &graphql.Field{
-		Type:        graphql.NewList(movieType),
+		Type: graphql.NewList(movieType),
 		Description: "Search movies by title",
 		Args: graphql.FieldConfigArgument{
 			"titleContains": &graphql.ArgumentConfig{
@@ -71,7 +72,7 @@ var fields = graphql.Fields{
 var movieType = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name: "Movie",
-		Fields: graphql.Fields{
+		Fields: graphql.Fields {
 			"id": &graphql.Field{
 				Type: graphql.Int,
 			},
